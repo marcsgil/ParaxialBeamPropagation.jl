@@ -106,7 +106,7 @@ function animate_beam(r_max::Float64,N::Int64,zmax::Float64,
 	plan2 = plan_bfft( zeros(ComplexF64, N,N ) , 2)
 
 	anim = @animate for z in LinRange(0,zmax,nframes)
-		ψs = propagate_beam(r_max,N,ϕ,z,plan1,plan2)
+		ψs = propagate_beam(r_max,N,z,ϕ,plan1,plan2)
 
 		I = real(ψs.*conj(ψs))
 
