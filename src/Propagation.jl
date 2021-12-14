@@ -85,7 +85,7 @@ end;
 function display_beam(r_max::Float64,N::Int64,z::Float64,plot_range::Float64,clim::Float64,ϕ)
 	#Displays a propageted beam
 	rs = get_dft_interval(r_max,N)
-	ψs = propagate_beam(r_max,N,ϕ,z)
+	ψs = propagate_beam(r_max,N,z,ϕ)
 
 	I = real(ψs.*conj(ψs))
 
